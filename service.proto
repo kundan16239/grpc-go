@@ -1,0 +1,24 @@
+syntax = "proto3";
+option go_package = "grpc-go/myservice";
+package myservice;
+
+service MyService {
+  rpc Create(CreateRequest) returns (CreateResponse);
+  rpc FindOne(FindOneRequest) returns (FindOneResponse);
+}
+
+message CreateRequest {
+  string name = 1;
+}
+
+message CreateResponse {
+  string id = 1;
+}
+
+message FindOneRequest {
+  string id = 1;
+}
+
+message FindOneResponse {
+  string name = 1;
+}
